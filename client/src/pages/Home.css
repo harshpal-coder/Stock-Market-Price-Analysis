@@ -1,0 +1,186 @@
+/* Global Page Layout */
+.main-container {
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-container {
+  padding: 05rem;           /* ✅ Left & right margin */
+  max-width: 1800px;         /* ✅ Optional width control */
+  margin: 0 auto;            /* ✅ Center horizontally */
+}
+
+/*.money-rain-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0; 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; 
+  }
+  
+  .coin {
+    position: absolute;
+    top: -60px;
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135706.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+  
+   
+    animation-name: fallSmooth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes fallSmooth {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(120vh) rotate(360deg);
+      opacity: 0;
+    }
+  }*/
+
+.page-wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .page-wrapper {
+      padding: 1rem;
+    }
+  }
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Top Section: Upload + Trending */
+  .top-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .top-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .upload-layout {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .upload-layout > div:first-child {
+    flex: 7;
+  }
+  
+  .upload-layout > div:last-child {
+    flex: 3;
+  }
+  
+  /* About & Section Styling */
+  .about-section {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #222;
+    margin: 2rem auto;
+    max-width: 900px;          /* ✅ controls width */
+    width: 100%;
+    text-align: center;        /* ✅ center align text */
+  }
+  
+  .about-text {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+  }
+  .section-title {
+    text-align: center;
+    color: #32cd32;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+
+  
+  /* Flash Cards for Insights */
+  .flash-insights {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* ✅ centers h2 and container */
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .flash-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;     /* ✅ center cards horizontally */
+    gap: 1.5rem;
+    margin-top: 1rem;
+    max-width: 1100px;           /* ✅ keep layout centered */
+    width: 100%;
+  }
+  
+  
+  .flash-card {
+    flex: 1;
+    min-width: 260px;
+    background: linear-gradient(145deg, #111, #1a1a1a);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .flash-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(50, 205, 50, 0.4);
+  }
+  
+  .flash-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #32cd32;
+    margin-bottom: 0.5rem;
+  }
+  
+  .flash-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #cccccc;
+  }
+  

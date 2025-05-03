@@ -1,0 +1,33 @@
+/* src/components/Loading.css */
+.loading-screen {
+    height: 100vh;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #32cd32;
+    z-index: 9999;
+  }
+  
+  .loader {
+    border: 6px solid #1a1a1a;
+    border-top: 6px solid #32cd32;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1.2rem;
+  }
+  
+  .loading-text {
+    font-size: 1.1rem;
+    color: #aaa;
+    letter-spacing: 1px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
