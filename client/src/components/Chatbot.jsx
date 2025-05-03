@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Chatbot.css";
 import { FaRocketchat, FaPaperPlane, FaTimes } from "react-icons/fa";
 
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
 const ChatBot = ({ stock, financials, description }) => {
   const [messages, setMessages] = useState([
     { from: "bot", text: `Hi! Ask me anything about ${stock}` },
@@ -11,7 +13,6 @@ const ChatBot = ({ stock, financials, description }) => {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom on new message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -24,7 +25,7 @@ const ChatBot = ({ stock, financials, description }) => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch(`${BASE_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

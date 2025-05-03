@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TrendingStocks.css";
 
+const BASE_URL =
+  process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
 const TrendingStocks = () => {
   const [trending, setTrending] = useState([]);
   const navigate = useNavigate();
@@ -9,7 +12,7 @@ const TrendingStocks = () => {
   useEffect(() => {
     const fetchTrending = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/trending");
+        const res = await fetch(`${BASE_URL}/api/trending`);
         const data = await res.json();
         setTrending(data.trending || []);
       } catch (err) {
@@ -22,7 +25,7 @@ const TrendingStocks = () => {
 
   const handleClick = async (stock) => {
     try {
-      const res = await fetch("http://localhost:5000/api/insight", {
+      const res = await fetch(`${BASE_URL}/api/insight`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ stockName: stock }),

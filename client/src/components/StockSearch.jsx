@@ -1,10 +1,10 @@
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Loading from "./loading"; // Make sure this path is correct
 import "./StockSearch.css";
+
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 const StockSearch = () => {
   const [stockName, setStockName] = useState("");
@@ -22,7 +22,7 @@ const StockSearch = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/api/insight", {
+      const response = await axios.post(`${BASE_URL}/api/insight`, {
         stockName: stockName.trim(),
       });
 
